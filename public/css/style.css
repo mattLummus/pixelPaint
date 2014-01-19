@@ -25,9 +25,7 @@ body{
 }
 
 .pixel{
-  height:5px;
-  width:5px;
-  border:2px solid white;
-  margin: 1px;
+  border:1px dashed grey;
+  margin: 0px;
   float:left;
 }

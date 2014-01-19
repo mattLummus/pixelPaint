@@ -5,13 +5,7 @@ function initalize(){
   $('#add-pixels').click(clickAddPixels);
   $('#colors').on('click', '.color', clickSelectColor);
   $('#pixels').on('mouseover', '.pixel', hoverColorPixel);
-  $('.pixel').click(clickPauseColor);
-  $('.sizer').click(clickSetPixels);
-  $('#clear').click(clear);
-}
-
-function clear(){
-  $('#pixels').empty();
+  $('button').click(clickSetPixels)
 }
 
 function hoverColorPixel(){
@@ -26,9 +20,6 @@ function clickAddPixels(){
 
   for(var i = 0; i<num; i++){
     var $pixel = $('<div>');
-    var sizeFactor = Math.sqrt(num/2.5);
-    $pixel.css("height:", sizeFactor);
-    $pixel.css("width:", sizeFactor);
     $pixel.addClass('pixel');
     $('#pixels').prepend($pixel);
   }
@@ -36,31 +27,18 @@ function clickAddPixels(){
 
 //for size buttons
 function clickSetPixels(){
- var num = $(this).attr('id');
+ var num = $('button').text();
  switch(num){
-   case 'sm':
-     addPixels(1000, 20)
-       //css resize
+   case 'Sm.':
+    alert('Sm.');
     break;
-   case 'med':
-     addPixels(500, 40)
-       //css resize
+   case 'Med.':
+    alert('Med.');
     break;
-   case 'lg':
-     addPixels(100, 75)
-       //css resize
+   case 'Lg.':
+    alert('Lg.');
     break;
-   default:
-  }
-}
-
-function addPixels(num, size){
-  for(var i = 0; i<num; i++){
-    var $pixel = $('<div>');
-        $pixel.addClass('pixel');
-        $pixel.css("height", size);
-        $pixel.css("width", size);
-    $('#pixels').prepend($pixel);
+   default;
   }
 }
 
@@ -71,10 +49,6 @@ function clickSelectColor(){
     $('.color').removeClass('selected');
     $(this).addClass('selected');
   }
-}
-
-function clickPauseColor(){
-  $(this).css('background-color', color);
 }
 
 function clickAddColor(){
