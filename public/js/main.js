@@ -39,15 +39,15 @@ function clickSetPixels(){
  var num = $(this).attr('id');
  switch(num){
    case 'sm':
-     addPixels(1000, 20)
+     addPixels(1960, 20)
        //css resize
     break;
    case 'med':
-     addPixels(500, 40)
+     addPixels(510, 40)
        //css resize
     break;
    case 'lg':
-     addPixels(100, 75)
+     addPixels(144, 75)
        //css resize
     break;
    default:
